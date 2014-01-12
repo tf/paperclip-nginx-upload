@@ -12,6 +12,11 @@ Alpha quality software. The code of this gem has been extracted from
 our production setup. The gem itself though is still under development
 and has not been used in production yet.
 
+The gem evolved out of the discussion in the following paperclip
+issue:
+
+https://github.com/thoughtbot/paperclip/issues/1396
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -23,15 +28,17 @@ Add this line to your application's Gemfile:
 Configure nginx to parse your upload requests. There is an example
 nginx configuration snippet in `examples/nginx.conf`.
 
+```ruby
     module YourApp
       class Application < Rails::Application
         # Other code...
 
-        config.paperclip_ginx_upload = {
+        config.paperclip_nginx_upload = {
           :tmp_file_whitelist => ['/tmp/nginx_uploads/**']
         }
       end
     end    
+```
 
 ## Contributing
 
