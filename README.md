@@ -1,5 +1,7 @@
 # Paperclip Nginx Upload
 
+[![Build Status](https://travis-ci.org/tf/paperclip-nginx-upload.png?branch=master)](https://travis-ci.org/tf/paperclip-nginx-upload)
+
 A Paperclip IOAdapter to handle file upload requests which have been
 rewritten by the
 [nginx upload module](https://github.com/vkholodkov/nginx-upload-module).
