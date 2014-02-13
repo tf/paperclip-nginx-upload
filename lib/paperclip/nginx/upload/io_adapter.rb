@@ -49,7 +49,7 @@ module Paperclip
           @content_type = @target[:content_type].to_s.strip
           @size = File.size(@target[:tmp_path])
 
-          FileUtils.mv(@target[:tmp_path], destination.path)
+          FileUtils.cp(@target[:tmp_path], destination.path)
           @tempfile = destination
 
           # Required to reopen the tempfile that we have overwritten
