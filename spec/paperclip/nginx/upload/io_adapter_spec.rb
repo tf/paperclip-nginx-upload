@@ -46,6 +46,11 @@ describe Paperclip::Nginx::Upload::IOAdapter do
       expect(content.length).to be > 0
       expect(subject.read).to eq(content)
     end
+
+    it 'copies the tempfile by default' do
+      subject
+      expect(File.exist?(tempfile.path)).to eq(true)
+    end
   end
 
   context 'for tmp file not in whitelist' do
@@ -63,6 +68,26 @@ describe Paperclip::Nginx::Upload::IOAdapter do
       expect {
         Paperclip::Nginx::Upload::IOAdapter.new(nginx_upload_hash, :tmp_path_whitelist => [])
       }.to raise_error(Paperclip::Nginx::Upload::TmpPathNotInWhitelistError)
+    end
+  end
+
+  context 'with move_tempfile option set to true' do
+    let :tempfile do
+      fixture_file('5k.png').binmode
+    end
+
+    it 'moves the tempfile to the new location' do
+      nginx_upload_hash = {
+        :original_name => '5k.png',
+        :tmp_path => tempfile.path,
+        :content_type => "image/x-png-by-browser\r"
+      }
+
+      Paperclip::Nginx::Upload::IOAdapter.new(nginx_upload_hash,
+                                              :tmp_path_whitelist => [File.join(PROJECT_ROOT, 'spec', 'tmp', '**')],
+                                              :move_tempfile => true)
+
+      expect(File.exist?(tempfile.path)).to eq(false)
     end
   end
 end

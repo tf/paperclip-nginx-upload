@@ -22,7 +22,8 @@ module Paperclip
 
         def self.default_options
           @default_options ||= {
-            :tmp_path_whitelist => []
+            :tmp_path_whitelist => [],
+            :move_tempfile => false
           }
         end
 
@@ -49,12 +50,20 @@ module Paperclip
           @content_type = @target[:content_type].to_s.strip
           @size = File.size(@target[:tmp_path])
 
-          FileUtils.cp(@target[:tmp_path], destination.path)
+          copy_or_move(@target[:tmp_path], destination.path)
           @tempfile = destination
 
           # Required to reopen the tempfile that we have overwritten
           @tempfile.open
           @tempfile.binmode
+        end
+
+        def copy_or_move(source_path, destination_path)
+          if @options[:move_tempfile]
+            FileUtils.mv(@target[:tmp_path], destination.path)
+          else
+            FileUtils.cp(@target[:tmp_path], destination.path)
+          end
         end
       end
     end
