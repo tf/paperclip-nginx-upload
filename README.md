@@ -1,5 +1,6 @@
 # Paperclip Nginx Upload
 
+[![Gem Version](https://badge.fury.io/rb/paperclip-nginx-upload.png)](http://badge.fury.io/rb/paperclip-nginx-upload)
 [![Build Status](https://travis-ci.org/tf/paperclip-nginx-upload.png?branch=master)](https://travis-ci.org/tf/paperclip-nginx-upload)
 
 A Paperclip IOAdapter to handle file upload requests which have been
@@ -8,7 +9,6 @@ rewritten by the
 
 The gem evolved out of the discussion in the following paperclip
 issue:
-
 https://github.com/thoughtbot/paperclip/issues/1396
 
 ## Motivation
