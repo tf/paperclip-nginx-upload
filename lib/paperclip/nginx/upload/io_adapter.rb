@@ -12,6 +12,11 @@ module Paperclip
       end
 
       class IOAdapter < Paperclip::AbstractAdapter
+        # Paperclip < 3.3.1 compatibility
+        unless Paperclip::AbstractAdapter.instance_methods.include?(:original_filename=)
+          attr_writer(:original_filename)
+        end
+
         def initialize(target, options = {})
           @target = target
           @options = self.class.default_options.merge(options)
