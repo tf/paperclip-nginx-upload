@@ -13,7 +13,7 @@ https://github.com/thoughtbot/paperclip/issues/1396
 
 ## Motivation
 
-Nginx is must faster when it comes to parsing file uploads from the
+Nginx is much faster when it comes to parsing file uploads from the
 body of HTTP requests.  We do not want to occupy our Rails processes
 with this tasks.  Using the
 [nginx upload module](https://github.com/vkholodkov/nginx-upload-module),
