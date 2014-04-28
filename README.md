@@ -39,7 +39,7 @@ Add an initializer to configure the gem:
 
  Paperclip::Nginx::Upload::IOAdapter.default_options.merge!(
    # location where nginx places file uploads
-   tmp_file_whitelist: ['/tmp/nginx_uploads/**'],
+   tmp_path_whitelist: ['/tmp/nginx_uploads/**'],
    
    # Change this option to true to move temp files created 
    # by nginx to the paperclip tmp file location. By default
@@ -102,7 +102,7 @@ assigning attachments directly might be open to attacks:
 ```
 
 Therefore the paperclip-nginx-upload adapter only accepts tmp files
-from locations matching an entry in the `tmp_file_whitelist`. That way
+from locations matching an entry in the `tmp_path_whitelist`. That way
 an attacker will only be able to access running uploads of other
 visitors of the site. He still would have to guess the random file
 names chosen by nginx, which seems rather unfeasable.
