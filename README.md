@@ -82,13 +82,13 @@ following three form fields instead:
 
 * `user[avatar][original_name]`
 * `user[avatar][conten_type]`
-* `user[avatar][upload_tmp_path]`
+* `user[avatar][tmp_path]`
 
 By using this gem, you basically tell your app to accept paths to
-local files in the `upload_tmp_path` param and move them around the
+local files in the `tmp_path` param and move them around the
 file system. Nginx ensures that these parameters can not be passed in
 from the outside, preventing an attacker from passing `/etc/passwd` as
-`upload_tmp_path` and having it delivered to him as his own upload
+`tmp_path` and having it delivered to him as his own upload
 later on.
 
 Still, if you forget to configure the nginx-upload-module correctly
