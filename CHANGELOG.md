@@ -1,10 +1,11 @@
 # CHANGELOG
 
-### Version 1.0.0
+### Unreleased Changes
 
-2017-07-28
+[Compare changes](https://github.com/tf/paperclip-nignx-upload/compare/1-0-stable...master)
 
-[Compare changes](https://github.com/tf/paperclip-nignx-upload/compare/v0.0.2...v1.0.0)
+None so far.
 
-No functional changes compared to version 0.0.2.
-
+See
+[1-0-stable branch](https://github.com/tf/paperclip-nignx-upload/blob/1-0-stable/CHANGELOG.md)
+for previous changes.
