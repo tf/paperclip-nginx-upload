@@ -24,7 +24,7 @@ parsed from the request body before they are passed to our Rails app.
 
 Add this line to your application's Gemfile:
 
-    gem 'paperclip-nginx-upload'
+    gem 'paperclip-nginx-upload', '~> 1.0'
 
 ## Usage
 
