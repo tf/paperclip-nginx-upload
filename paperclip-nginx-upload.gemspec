@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Tim Fischbach"]
   spec.email         = ["tfischbach@codevise.de"]
   spec.summary       = "Paperclip IOAdapter for integration with nginx upload module"
-  spec.homepage      = "https://github.com/tf/paperclip-nignx-upload"
+  spec.homepage      = "https://github.com/tf/paperclip-nginx-upload"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
