@@ -1,7 +1,7 @@
 module Paperclip
   module Nginx
     module Upload
-      VERSION = '1.1.0'
+      VERSION = '1.2.0.dev'
     end
   end
 end
