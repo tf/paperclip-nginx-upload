@@ -14,7 +14,8 @@ describe Paperclip::Nginx::Upload::IOAdapter do
       }
 
       options = {
-        :tmp_path_whitelist => [File.join(PROJECT_ROOT, 'spec', 'tmp', '**')]
+        :tmp_path_whitelist => [File.join(PROJECT_ROOT, 'spec', 'tmp', '**')],
+        :hash_digest => Digest::MD5
       }
 
       Paperclip::Nginx::Upload::IOAdapter.new(nginx_upload_hash, options)
