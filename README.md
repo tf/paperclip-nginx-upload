@@ -22,9 +22,15 @@ parsed from the request body before they are passed to our Rails app.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Choose one from two options and add line to your application's Gemfile:
+
+1.) with [paperclip](https://github.com/thoughtbot/paperclip) dependency, use:
 
     gem 'paperclip-nginx-upload', '~> 1.0'
+
+2.) with [kt-paperclip](https://github.com/kreeti/kt-paperclip) dependency, use:
+
+    gem 'paperclip-nginx-upload', '~> 2.0' 
 
 ## Usage
 
